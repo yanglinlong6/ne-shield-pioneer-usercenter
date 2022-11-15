@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.glsx.shield.modules.mapper.CustUserWechatAccountMapper">
+    <resultMap id="BaseResultMap" type="cn.com.glsx.shield.modules.entity.CustUserWechatAccount">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="auth_id" jdbcType="INTEGER" property="authId"/>
+        <result column="union_id" jdbcType="VARCHAR" property="unionId"/>
+        <result column="wechat_avatar" jdbcType="VARCHAR" property="wechatAvatar"/>
+        <result column="wechat_name" jdbcType="VARCHAR" property="wechatName"/>
+        <result column="del_flag" jdbcType="TINYINT" property="delFlag"/>
+        <result column="created_date" jdbcType="TIMESTAMP" property="createdDate"/>
+        <result column="created_by" jdbcType="INTEGER" property="createdBy"/>
+        <result column="updated_date" jdbcType="TIMESTAMP" property="updatedDate"/>
+        <result column="updated_by" jdbcType="INTEGER" property="updatedBy"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        id, auth_id, union_id, wechat_avatar, wechat_name, del_flag, created_date, created_by,
+        updated_date, updated_by
+    </sql>
+
+    <select id="selectByUserIds" resultType="cn.com.glsx.usercenter.api.dto.response.CUser">
+        select tcuar.user_id userId, tcu.rel_user_id relUserId, tcula.account, ifnull(tcuwa.wechat_name, tcula.account)
+        username, tcuwa.wechat_avatar avatar
+        from t_cust_user_auth_rel tcuar
+        inner join t_cust_user_third_auth tcuta on tcuar.auth_id = tcuta.id
+        left join t_cust_user tcu on tcuar.user_id = tcu.id
+        left join t_cust_user_wechat_account tcuwa on tcuar.auth_id = tcuwa.auth_id
+        left join t_cust_user_auth_rel tcuar2 on tcu.id = tcuar2.user_id and tcuar2.auth_type = 'local'
+        left join t_cust_user_local_auth tcula on tcuar2.auth_id = tcula.id
+        where tcuar.del_flag = 0
+        and tcuar.auth_type = 'third'
+        and tcuta.login_type = 'wechat'
+        and tcuar.user_id in
+        <foreach collection="cuserIds" item="item" index="index" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </select>
+</mapper>

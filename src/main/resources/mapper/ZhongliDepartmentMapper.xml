@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.glsx.shield.modules.mapper.ZhongliDepartmentMapper">
+    <resultMap id="BaseResultMap" type="cn.com.glsx.shield.modules.entity.ZhongliDepartment">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="group_id" jdbcType="INTEGER" property="groupId"/>
+        <result column="group_name" jdbcType="VARCHAR" property="groupName"/>
+        <result column="class_id" jdbcType="INTEGER" property="classId"/>
+        <result column="class_name" jdbcType="VARCHAR" property="className"/>
+        <result column="one_level" jdbcType="VARCHAR" property="oneLevel"/>
+        <result column="two_level" jdbcType="VARCHAR" property="twoLevel"/>
+        <result column="three_level" jdbcType="VARCHAR" property="threeLevel"/>
+        <result column="four_level" jdbcType="VARCHAR" property="fourLevel"/>
+        <result column="type" jdbcType="TINYINT" property="type"/>
+        <result column="del_flag" jdbcType="TINYINT" property="delFlag"/>
+        <result column="created_date" jdbcType="TIMESTAMP" property="createdDate"/>
+        <result column="created_by" jdbcType="INTEGER" property="createdBy"/>
+        <result column="updated_date" jdbcType="TIMESTAMP" property="updatedDate"/>
+        <result column="updated_by" jdbcType="INTEGER" property="updatedBy"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        id, group_id, group_name, class_id, class_name, one_level, two_level, three_level,
+        four_level, `type`, del_flag, created_date, created_by, updated_date, updated_by
+    </sql>
+
+    <select id="selectAllLevel" resultType="cn.com.glsx.shield.modules.model.zhongli.ZhongliDepartmentModel">
+        select one_level oneLevel, two_level twoLevel, three_level threeLevel, four_level fourLevel
+        from t_zhongli_department
+        group by one_level, two_level, three_level, four_level
+        order by one_level, two_level, three_level, four_level
+    </select>
+</mapper>

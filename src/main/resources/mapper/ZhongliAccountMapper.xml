@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.glsx.shield.modules.mapper.ZhongliAccountMapper">
+    <resultMap id="BaseResultMap" type="cn.com.glsx.shield.modules.entity.ZhongliAccount">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="edun_role" jdbcType="VARCHAR" property="edunRole"/>
+        <result column="account" jdbcType="VARCHAR" property="account"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="group_name" jdbcType="VARCHAR" property="groupName"/>
+        <result column="class_name" jdbcType="VARCHAR" property="className"/>
+        <result column="level" jdbcType="VARCHAR" property="level"/>
+        <result column="department" jdbcType="VARCHAR" property="department"/>
+        <result column="role_name" jdbcType="VARCHAR" property="roleName"/>
+        <result column="type" jdbcType="TINYINT" property="type"/>
+        <result column="del_flag" jdbcType="TINYINT" property="delFlag"/>
+        <result column="created_date" jdbcType="TIMESTAMP" property="createdDate"/>
+        <result column="created_by" jdbcType="INTEGER" property="createdBy"/>
+        <result column="updated_date" jdbcType="TIMESTAMP" property="updatedDate"/>
+        <result column="updated_by" jdbcType="INTEGER" property="updatedBy"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        id, edun_role, account, username, group_name, class_name, `level`, department, role_name,
+        `type`, del_flag, created_date, created_by, updated_date, updated_by
+    </sql>
+
+    <select id="selectByLevel" resultType="cn.com.glsx.shield.modules.model.zhongli.ZhongliAccountModel">
+        select `level`, account, username, department, role_name roleName
+        from t_zhongli_account
+        where del_flag = 0
+        <if test="level != null and level != ''">
+            and `level` = #{level}
+        </if>
+        group by account, username, department, role_name
+    </select>
+</mapper>
