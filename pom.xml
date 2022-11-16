@@ -48,8 +48,8 @@
 
         <dependency>
             <groupId>com.glsx</groupId>
-            <artifactId>ne-shield-auth-client</artifactId>
-            <version>1.2.0-SNAPSHOT</version>
+            <artifactId>ne-shield-pioneer-auth-client</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
