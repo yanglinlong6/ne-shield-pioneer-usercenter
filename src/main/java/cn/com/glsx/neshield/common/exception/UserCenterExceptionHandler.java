@@ -1,4 +1,4 @@
-package cn.com.glsx.shield.common.exception;
+package cn.com.glsx.neshield.common.exception;
 
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
 import com.glsx.plat.core.web.R;

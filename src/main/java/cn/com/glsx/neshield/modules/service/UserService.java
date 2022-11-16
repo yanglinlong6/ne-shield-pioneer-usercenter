@@ -1,7 +1,7 @@
-package cn.com.glsx.shield.modules.service;
+package cn.com.glsx.neshield.modules.service;
 
-import cn.com.glsx.shield.modules.entity.User;
-import cn.com.glsx.shield.modules.mapper.UserMapper;
+import cn.com.glsx.neshield.modules.entity.User;
+import cn.com.glsx.neshield.modules.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

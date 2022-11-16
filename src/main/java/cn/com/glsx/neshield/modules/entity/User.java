@@ -1,4 +1,4 @@
-package cn.com.glsx.shield.modules.entity;
+package cn.com.glsx.neshield.modules.entity;
 
 import cn.com.glsx.auth.model.SyntheticUser;
 import cn.com.glsx.auth.utils.ShieldContextHolder;

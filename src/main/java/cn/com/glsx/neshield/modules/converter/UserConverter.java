@@ -1,4 +1,4 @@
-package cn.com.glsx.shield.modules.converter;
+package cn.com.glsx.neshield.modules.converter;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

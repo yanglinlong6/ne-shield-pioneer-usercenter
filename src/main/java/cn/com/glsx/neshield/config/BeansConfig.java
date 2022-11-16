@@ -1,4 +1,4 @@
-package cn.com.glsx.shield.config;
+package cn.com.glsx.neshield.config;
 
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.google.code.kaptcha.util.Config;

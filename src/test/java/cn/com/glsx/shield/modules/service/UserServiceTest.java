@@ -1,7 +1,8 @@
 package cn.com.glsx.shield.modules.service;
 
 import cn.com.glsx.Application;
-import cn.com.glsx.shield.modules.entity.User;
+import cn.com.glsx.neshield.modules.entity.User;
+import cn.com.glsx.neshield.modules.service.UserService;
 import cn.hutool.json.JSONUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;

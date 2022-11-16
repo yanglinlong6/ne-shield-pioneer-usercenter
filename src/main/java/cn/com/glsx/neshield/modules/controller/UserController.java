@@ -1,7 +1,7 @@
-package cn.com.glsx.shield.modules.controller;
+package cn.com.glsx.neshield.modules.controller;
 
-import cn.com.glsx.shield.modules.entity.User;
-import cn.com.glsx.shield.modules.service.UserService;
+import cn.com.glsx.neshield.modules.entity.User;
+import cn.com.glsx.neshield.modules.service.UserService;
 import com.glsx.plat.core.web.R;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;

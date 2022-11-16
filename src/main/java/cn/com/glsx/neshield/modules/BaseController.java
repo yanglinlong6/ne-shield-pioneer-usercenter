@@ -1,7 +1,7 @@
-package cn.com.glsx.shield.modules;
+package cn.com.glsx.neshield.modules;
 
-import cn.com.glsx.shield.modules.entity.User;
-import cn.com.glsx.shield.modules.service.UserService;
+import cn.com.glsx.neshield.modules.entity.User;
+import cn.com.glsx.neshield.modules.service.UserService;
 import com.glsx.plat.core.web.R;
 import com.glsx.plat.web.controller.AbstractController;
 import org.springframework.web.bind.annotation.GetMapping;

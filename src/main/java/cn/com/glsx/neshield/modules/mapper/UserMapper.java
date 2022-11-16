@@ -1,6 +1,6 @@
-package cn.com.glsx.shield.modules.mapper;
+package cn.com.glsx.neshield.modules.mapper;
 
-import cn.com.glsx.shield.modules.entity.User;
+import cn.com.glsx.neshield.modules.entity.User;
 import com.glsx.plat.mybatis.mapper.CommonBaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
